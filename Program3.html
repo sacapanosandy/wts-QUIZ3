@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPAIRING OF TWO NUMBERS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>COMPAIRING OF TWO NUMBERS</h1>
+        <label for="Num1">Enter First Number: </label>
+        <input type="number" id="num1"/><br>
+        <label for="Num2">Enter Second Number: </label>
+        <input type="number" id="num2"/><br>
+        <button onclick="Compare()">Compute</button>
+        <p id="result">Compare: </p>
+        <a href="index.html" class="back-button">Back</a>
+    </div>
+    
+    <footer>Submitted by: Sandy Sacapaño</footer>
+
+    <script>
+        function Compare(){
+            var A = parseFloat(document.getElementById('num1').value);
+            var B = parseFloat(document.getElementById('num2').value);
+            
+            if(A > B){
+                document.getElementById('result').innerHTML = "Compare: num1 > num2";
+            }
+            else if(A < B){
+            document.getElementById('result').innerHTML = "Compare: num1 < num2";
+            }
+            else{
+                document.getElementById('result').innerHTML = "Compare: num1 = num2" ;
+            }
+        }
+    </script>
+</body>
+</html>

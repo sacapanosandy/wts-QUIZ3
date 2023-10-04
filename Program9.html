@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 9</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+  
+        
+
+    <div class="container">
+    <h1>Grade Conversion</h1>
+    <label for="numOfCorrect">Enter the number of correct answers:</label>
+    <input type="number" id="numOfCorrect"><br/>
+
+    <label for="numOfItems">Enter the total number of items:</label><br/>
+    <input type="number" id="numOfItems">
+
+
+    <p class="result" id="result"></p>
+
+    <button class="check" onclick="convertToGrade()">Convert</button><br/>
+    <a href="index.html" class="back-button">Back</a>
+    </div>
+    <footer>Submitted by: Sandy Sacapaño</footer>
+
+    <script>
+        function convertToGrade() {
+            var numOfCorrect = parseInt(document.getElementById("numOfCorrect").value);
+            var numOfItems = parseInt(document.getElementById("numOfItems").value);
+            var resultParagraph = document.getElementById("result");
+
+            if (isNaN(numOfCorrect) || isNaN(numOfItems) || numOfCorrect < 0 || numOfItems < 0 || numOfCorrect > numOfItems || numOfItems > 100) {
+                resultParagraph.textContent = "Invalid input. Please enter valid values.";
+                return;
+            }
+
+            var egrade = (numOfCorrect / numOfItems) * 60 + 40;
+            
+            var grade;
+            if (egrade >= 75 && egrade <= 80) {
+                grade = "NOT BAD";
+            } else if (egrade >= 81 && egrade <= 85) {
+                grade = "GOOD";
+            } else if (egrade >= 86 && egrade <= 90) {
+                grade = "VERY GOOD";
+            } else if (egrade >= 91 && egrade <= 95) {
+                grade = "MAY FUTURE KA";
+            } else if (egrade >= 96 && egrade <= 100) {
+                grade = "PDE NA MAG ASAWA";
+            } else {
+                grade = "SORRY, KULANG PA SA EFFORT...";
+            }
+
+            resultParagraph.textContent = "Equivalent grade: " + egrade.toFixed(2) + " - " + grade;
+        }
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVERAGE CALCULATION</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AVERAGE CALCULATION</h1>
+            <label for="num1">Enter First Number</label>
+            <input type="number" id="num1"/><br/>
+    
+            <label for="num2">Enter Second Number</label>
+            <input type="number" id="num2"/><br/>
+    
+            <label for="num3">Enter Third Number</label>
+            <input type="number" id="num3"/><br/>
+    
+            <label for="num4">Enter Fourth Number</label>
+            <input type="number" id="num4"/><br/>
+    
+            <button onclick="Average()">CONTINUE</button>
+        <p id="remark">Remark: </p>
+        <p id="average">Average: </p>
+        <a href="index.html" class="back-button">Back</a>
+    </div>
+    
+    <footer>Submitted by: Sandy Sacapaño</footer>
+
+    <script>
+         function Average() {
+            var A = parseFloat(document.getElementById('num1').value);
+            var B = parseFloat(document.getElementById('num2').value);
+            var C = parseFloat(document.getElementById('num3').value);
+            var D = parseFloat(document.getElementById('num4').value);
+
+                var average = (A + B + C + D) / 4;
+
+            if (average > 75) {
+                document.getElementById("remark").innerHTML = "PASSED" + remark;
+            }
+            else {
+                document.getElementById("remark").innerHTML = "FAILED" + remark;
+            }
+
+            document.getElementById('average').innerHTML = "Average: "+ average;
+        }
+
+    </script>
+</body>
+</html>
